@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Grid Load Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h1>AI Grid Load Management</h1>
+
+    <div id="chart-container">
+        <canvas id="gridLoadChart"></canvas>
+
+        <div class="battery-container">
+            <div class="battery-level" id="batteryLevel"></div>
+            <div class="battery-charging" id="batteryCharging"></div>
+        </div>
+    </div>
+
+    <div class="control-panel">
+        <label for="loadSlider">Adjust Grid Load</label>
+        <input type="range" id="loadSlider" min="-10" max="100" step="1" value="0">
+        <p>Current Load: <span id="currentLoad">0</span> kW</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
